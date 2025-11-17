@@ -9,7 +9,7 @@ app = Flask(__name__)
 DATABASE_URL = os.environ.get('postgresql://severless_db_9e8u_user:TZTaRM55JFyD9LsxBBSkifoCy2GRxnfn@dpg-d4dlbeili9vc73cjr320-a/severless_db_9e8u')
 if DATABASE_URL:
     url = urlparse(DATABASE_URL)
-    conn = psycopg2.connect(
+    conn = psycopg3.connect(
         database=url.path[1:],
         user=url.username,
         password=url.password,
